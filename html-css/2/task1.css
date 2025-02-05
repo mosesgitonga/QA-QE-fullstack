@@ -1,0 +1,49 @@
+main {
+    display: flex;
+    justify-content: center;
+    background-color: hsl(213, 42%, 86%);
+    width: 100%;
+    height: 100vh;
+    margin: 0 auto;
+    align-items: center;
+}
+
+#google {
+    width: 115px;
+}
+.center-box {
+    background-color: #e4eef3;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 320px;
+    max-width: 90%;
+    border-radius: 50px;
+    height: 75%;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 20px;
+
+}
+
+#add-to-search {
+    margin-top: 40px;
+    width: 155px;
+    height: 45px;
+    border-radius: 50px;
+    color: black;
+    background-color: white;
+    font-weight: 800;
+    font-size: 200;
+    border: none;
+}
+
+.social-media > img{
+    width: 20px;
+    justify-content: space-around;
+    padding: 10px;
+}
+
+#twitter-icon {
+    width: 31px;
+}
