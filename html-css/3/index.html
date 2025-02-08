@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>abc landing page.</title>
+    <link rel="stylesheet" href="./styles.css">
+    <script>
+        let quantity = 1;
+        const minQuantity = 1;
+
+        function changeQuantity(amount) {
+            quantity += amount;
+            if (quantity < minQuantity) {
+                quantity = minQuantity;
+            }
+
+            document.getElementById("quantity").textContent = quantity;
+            document.getElementById("decrease").disabled = (quantity === minQuantity);
+        }
+
+        document.getElementById("decrease").disabled = (quantity === minQuantity);
+    </script>
+</head>
+<body>
+    <nav id="navigation">
+        <div>
+            <li class="logo"><img src="./assets/Screenshot from 2025-02-06 08-07-36.png" alt="logo"></li>
+        </div>
+
+        <div id="center">
+            <ul>
+                <li>Home</li>
+                <li>Shop</li>
+                <li>Contact</li>
+                <li>help</li>
+            </ul>
+        </div>
+        <div id="right">
+            <ul>
+                <li>Account</li>
+                <div class="items">
+                    <img  src="./assets/padlock.png" alt="">
+                    <li  >3 items</li>
+                </div>
+
+                <li><img src="./assets/Untitled.jpeg" alt="profile image"></li>
+            </ul>
+        </div>
+    </nav>
+    <main>
+        <div id="details">
+            <div class="process">
+                <div>Account </div> 
+                <hr style="width: 20px; height: 1px; background-color: #333; border: none;">
+                <img src="./assets/Screenshot from 2025-02-08 09-53-39.png" alt="">
+                <hr style="width: 20px; height: 1px; background-color: #333; border: none;">
+
+                <div>Shipping</div>
+
+                <hr style="width: 20px; height: 1px; background-color: #333; border: none;">
+                <img src="./assets/Screenshot from 2025-02-08 09-53-39.png" alt="">
+                <hr style="width: 20px; height: 1px; background-color: #333; border: none;">
+
+                <div>payment</div>
+            </div>
+            <div class="account">
+                <h5>Account details</h5>
+                <label for="email"  >Email address</label>
+                <br>
+                <input type="email" placeholder="email@myemail.com">
+                <br>
+                <label for="password">password</label>
+                <br>
+                <input type="password">
+                <div class="auth">
+                    <button id="register">Register for account</button>
+                    <button id="login">Login</button>
+                </div>
+                <hr style="opacity: 0.2; height: 1px; background-color: #333; border: none;">
+                <div class="shipping">
+                    <button id="cancel-order">Cancel Order</button>
+                    <button id="shipping-details">Shipping Details</button>
+                </div>
+            </div>
+        </div>
+        <div class="summary">
+            <h5>Order Summary</h5>
+            <li><img src="./assets/Screenshot from 2025-02-06 08-09-44.png" alt="cart item image"></li>
+            <div id="cart-summary">
+                <div class="container">
+                    <p id="description">Sony wireless headphones</p>
+
+                    <div class="quantity-container">
+                        <button class="quantity-btn" id="decrease" onclick="changeQuantity(-1)">−</button>
+                        <span class="quantity-number" id="quantity">1</span>
+                        <button class="quantity-btn" id="increase" onclick="changeQuantity(1)">+</button>
+                    </div>
+                </div>
+                <p>$320.45</p>
+
+            
+                <label>Gift Card / Discount code</label>
+                <div class="totals">
+                    <div>
+                        <input id="discount-code" type="text">
+                        <button id="apply">Apply</button>
+                    </div>
+                    <div>
+                        <p>Sub total</p>
+                        <p>£316.55</p>
+                    </div>
+                    <div>
+                        <p>tax</p>
+                        <p>£3.45</p>
+                    </div>
+                    <div>
+                        <p>Shipping</p>
+                        <p id="free">Free</p>
+                    </div>
+                    <div>
+                        <h5>Total</h5>
+                        <p>£320.45</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

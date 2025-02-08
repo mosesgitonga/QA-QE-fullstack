@@ -1,0 +1,179 @@
+* {
+    background-color: rgb(255, 255, 255);
+    list-style: none;
+
+}
+
+#navigation {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    border-bottom: 1px solid #615555;
+    color: #333;
+}
+
+
+#center ul, #right ul{
+    display: flex;
+    align-items: center;
+    
+}
+
+#center > ul > li, #right > ul > li {
+    margin-right: 40px;
+    display: flex;
+}
+
+#right > ul > li > img {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+
+}
+
+.items {
+    width: 100px;
+    height: 30px;
+    display: flex;
+    margin-right: 60px;
+}
+
+/* .padlock {
+    width: 10px;
+    height: 20px;
+    display: flex;
+    padding-right: 50px;
+    flex-wrap: nowrap;
+} */
+main {
+    display: flex;
+    justify-content: space-around;
+}
+
+.process {
+    display: flex;
+    justify-content: space-around;
+}
+.process > div, .process > hr{
+    margin-right: 10px;
+}
+
+.process > img {
+    width: 20px;
+}
+#details {
+    background-color: #f1f6fa;
+    padding: 10px 80px 10px 80px;
+    border-radius: 10px;
+    margin-top: 15px;
+    display: block;
+    align-items: center;
+    justify-content: center;
+}
+
+#details div, h5, label {
+    background-color: #f1f6fa;
+}
+
+#details > div > input {
+    width: 80%;
+    height: 30px;
+    border: none;
+    background-color: #dfdddd;
+    border-radius: 8px;
+}
+
+.account > * {
+    margin-top: 8px;
+}
+
+.account > .auth {
+    height: 30vh;
+}
+
+.auth, .shipping {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    justify-content: flex-end;
+    align-items: center;
+    /* border: 1px solid green; */
+    width: 80%;
+    
+}
+
+#register, #cancel-order{
+    border: none;
+    position: relative;
+    right: -30%;
+}
+#shipping-details, #login {
+    position: relative;
+    right: -30%;
+    justify-content: center;
+    width: 110px;
+    height: 45px;
+    margin-right: 10px;
+    border-radius: 10px;
+    background-color: rgb(55, 154, 252);
+    box-shadow: none;
+    outline: none;
+    border: none
+}
+
+
+
+.summary{
+    margin-top: 15px;
+    padding: 10px 60px 10px 60px;
+    background-color: #f1f6fa;
+    margin-right: 50px;
+    border-radius: 10px;
+}
+
+.summary > #cart-summary, .container, .totals, #cart-summary > p  {
+    background-color: #f1f6fa;
+}
+
+#description {
+    background-color: #f1f6fa;
+}
+.container{
+    display: flex;
+    align-items: center;
+}
+
+#apply {
+    border: 2px solid dodgerblue;
+    height: 40px;
+    width: 80px;
+    border-radius: 10px;
+    background-color: #f1f6fa;
+}
+
+#cart-summary > label {
+    font-size: 13px;
+
+}
+#discount-code {
+    border: none;
+    background-color: #dfdddd;
+    border-radius: 10px;
+}
+
+.container p {
+    margin-right: 8px;
+}
+
+.totals > div, .totals > div > p {
+    display: flex;
+    justify-content: space-between;
+    background-color: #f1f6fa;
+
+}
+
+#free {
+    color: dodgerblue;
+}
+
+.totals > div > p {
+}
