@@ -126,45 +126,144 @@ const camelize = (some_string) => {
     return concated
 }
 
-const uncamelize = (some_string, replacement) => {
-    let res;
-    let strings = some_string.slice(some_string[i])
-
-    for (let i = 0; i < strings.length; i++) {
-        if (some_string[i] === strings[i].toUpperCase() && strings[i] !== 0) {
-            console.log(some_string[i])
-            console.log(strings)
-            // let concated = strings.join('-')
-            // res = concated.toLowerCase()
-        }
+const uncamelize = (str, a=' ') => {
+    let res = "";
+    if (typeof a !== "string" || a.length === 0) {
+        a = "-"; 
     }
-    return res 
+    for (let i = 0; i < str.length; i++) {
+        let char = str[i];
+        if (char === char.toUpperCase() && i !== 0) {
+            res += a;
+        }
+        res += char.toLowerCase();
+    }
+    return res;
 }
 
+const repeat = (some_str, n) => {
+    const res = some_str.repeat(n)
+    return res
+}
 
+const insert = (some_str, insert_str, n) => {
+    let new_str = some_str.slice(0, n - 1) + " " + insert_str + some_str.slice(n, some_str.length)
+    return new_str
+}
+
+const humanize_format = (some_num) => {
+    let num_str = some_num.toString();
+    let last_num = parseInt(num_str[num_str.length - 1], 10); 
+    let last_two_digits = some_num % 100; 
+
+    if ([11, 12, 13].includes(last_two_digits)) {
+        return `${some_num}th`;
+    }
+
+    const human_key = {
+        "th": [0, 4, 5, 6, 7, 8, 9],
+        "st": [1],
+        "nd": [2],
+        "rd": [3]
+    };
+
+    let suffix = "th"; 
+
+    for (const [key, values] of Object.entries(human_key)) {
+        if (values.includes(last_num)) { 
+            suffix = key;
+            break;
+        }
+    }
+
+    return `${some_num}${suffix}`;
+};
+
+const text_truncate = (some_str, index, append_txt) => {
+    let trucated_txt = truncate_string(some_str, index)
+    return `${trucated_txt} ${append_txt}`
+}
+
+const string_chop = (some_str, size) => {
+    let chopped = [];
+    for (let i = 0; i < some_str.length; i += size) {
+        chopped.push(some_str.slice(i, i + size)); 
+    }
+    return chopped;
+};
+
+const count = (main_str, sub_str) => {
+    let lowercaseStr = main_str.toLowerCase()
+
+    let pos = lowercaseStr.indexOf(sub_str)
+    let count = 0;
+
+    while (pos !== -1) {
+        count ++
+        pos = main_str.indexOf(sub_str, pos + 1)
+    }
+
+    return count    
+}   
+
+const reverse_binary = (num) => {
+    let binaryStr = num.toString(2);
+
+    let reversedBinaryStr = binaryStr.split('').reverse().join('');
+    let decimalRes = parseInt(reversedBinaryStr, 2);
+    return decimalRes;
+}
+
+const formatted_string = (padding, str, direction) => {
+    str = str.toString();    
+    let length = padding.length;
+    
+    if (direction === 'l') {
+        return str.padStart(length, padding[0]);
+    } else if (direction === 'r') {
+        return str.padEnd(length, padding[0]); 
+    }
+};
 // Test
-// console.log(is_string("W3resource")); // true
-// console.log(is_string(2)); // false
+console.log(is_string("W3resource")); // true
+console.log(is_string(2)); // false
 
-// console.log(is_Blank('')); // true
-// console.log(is_Blank('abc')); // false
+console.log(is_Blank('')); // true
+console.log(is_Blank('abc')); // false
 
-// console.log(string_to_array("Robin Singh"));
+console.log(string_to_array("Robin Singh"));
 
-// console.log(truncate_string("Robin Singh", 4)); // "Robi"
+console.log(truncate_string("Robin Singh", 4)); // "Robi"
 
-// console.log(abbrev_name("Robin Singh")); // "Robin S."
+console.log(abbrev_name("Robin Singh")); // "Robin S."
 
-// console.log(protect_email("robin_singh@example.com"));
+console.log(protect_email("robin_singh@example.com"));
 
-// console.log(string_parameterize("Robin Singh from USA."));
+console.log(string_parameterize("Robin Singh from USA."));
 
-// console.log(capitalize('js string exercises'));
+console.log(capitalize('js string exercises'));
 
-//console.log(capitalize_Words('js string exercises')); // "Js String Exercises"
+console.log(capitalize_Words('js string exercises')); // "Js String Exercises"
 
-// console.log(swapcase('AaBbc')); // "aAbBC"
+console.log(swapcase('AaBbc')); // "aAbBC"
 
-// console.log(camelize("JavaScript Exercises")); // "JavaScriptExercises"
+console.log(camelize("JavaScript Exercises")); // "JavaScriptExercises"
 
 console.log(uncamelize('helloWorld','-')); // "hello-world"
+console.log(uncamelize('helloWorld')); // "hello world"
+
+console.log(repeat('Ha!', 3)); // "Ha!Ha!Ha!"
+
+console.log(insert('We are doing some exercises.', 'JavaScript ', 18));
+
+console.log(humanize_format(301)); // "301st"
+
+console.log(text_truncate('We are doing JS string exercises.', 15, '!!'));
+
+console.log(string_chop('w3resource', 3)); // ["w3r", "eso", "urc", "e"]
+
+console.log(count("The quick brown fox jumps over the lazy dog", 'the'));
+
+console.log(reverse_binary(100)); // 19
+
+console.log(formatted_string('0000', 123, 'l')); // "0123"
