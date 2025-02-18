@@ -1,0 +1,13 @@
+{
+  "name": "7-groupproject",
+  "version": "1.0.0",
+  "main": "scripts.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "node scripts.js",
+    "dev:start": "nodemon scripts.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}
